@@ -1,10 +1,13 @@
 package com.wewe.happybirthday
 
+import android.app.ListActivity
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -12,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -30,9 +34,8 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     BirthdayGreetingWithImage(
-                        message = getString(R.string.happy_birthday_text), from = getString(
-                            R.string.signature_text
-                        )
+                        message = getString(R.string.happy_birthday_text),
+                        from = getString(R.string.signature_text)
                     )
                 }
             }
@@ -43,7 +46,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun BirthdayGreetingWithText(message: String, from: String, modifier: Modifier = Modifier) {
     Column(
-        modifier = modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -61,6 +63,25 @@ fun BirthdayGreetingWithText(message: String, from: String, modifier: Modifier =
                 .padding(top = 16.dp, end = 16.dp)
                 .align(alignment = Alignment.End)
         )
+
+        val context = LocalContext.current
+        Button(
+            onClick = { context.startActivity(Intent(context, SecondActivity::class.java)) }
+        ) {
+            Text(text = "Show Second Task Activity")
+        }
+
+        Button(
+            onClick = { context.startActivity(Intent(context, ThirdActivity::class.java)) }
+        ) {
+            Text(text = "Show Third Task Activity")
+        }
+
+        Button(
+            onClick = { context.startActivity(Intent(context, FourthActivity::class.java)) }
+        ) {
+            Text(text = "Show Fourth Task Activity")
+        }
     }
 }
 

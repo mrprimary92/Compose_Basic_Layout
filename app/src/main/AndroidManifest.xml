@@ -12,6 +12,21 @@
         android:theme="@style/Theme.HappyBirthday"
         tools:targetApi="31">
         <activity
+            android:name=".FourthActivity"
+            android:exported="false"
+            android:label="@string/title_activity_fourth"
+            android:theme="@style/Theme.HappyBirthday" />
+        <activity
+            android:name=".ThirdActivity"
+            android:exported="false"
+            android:label="@string/title_activity_third"
+            android:theme="@style/Theme.HappyBirthday" />
+        <activity
+            android:name=".SecondActivity"
+            android:exported="false"
+            android:label="@string/title_activity_second_activitu"
+            android:theme="@style/Theme.HappyBirthday" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
