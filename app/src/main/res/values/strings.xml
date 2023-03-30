@@ -18,4 +18,5 @@
     <string name="title3">Row composable</string>
     <string name="title4">Column composable</string>
     <string name="body4">A layout composable that places its children in a vertical sequence.</string>
+    <string name="title_activity_diyactivitu">DIYActivitu</string>
 </resources>

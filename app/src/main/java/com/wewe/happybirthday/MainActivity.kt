@@ -47,7 +47,8 @@ class MainActivity : ComponentActivity() {
 fun BirthdayGreetingWithText(message: String, from: String, modifier: Modifier = Modifier) {
     Column(
         verticalArrangement = Arrangement.Top,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.fillMaxWidth()
     ) {
         Text(
             text = message,
@@ -66,21 +67,31 @@ fun BirthdayGreetingWithText(message: String, from: String, modifier: Modifier =
 
         val context = LocalContext.current
         Button(
-            onClick = { context.startActivity(Intent(context, SecondActivity::class.java)) }
+            onClick = { context.startActivity(Intent(context, SecondActivity::class.java)) },
+            modifier = Modifier.fillMaxWidth()
         ) {
             Text(text = "Show Second Task Activity")
         }
 
         Button(
-            onClick = { context.startActivity(Intent(context, ThirdActivity::class.java)) }
+            onClick = { context.startActivity(Intent(context, ThirdActivity::class.java)) },
+            modifier = Modifier.fillMaxWidth()
         ) {
             Text(text = "Show Third Task Activity")
         }
 
         Button(
-            onClick = { context.startActivity(Intent(context, FourthActivity::class.java)) }
+            onClick = { context.startActivity(Intent(context, FourthActivity::class.java)) },
+            modifier = Modifier.fillMaxWidth()
         ) {
             Text(text = "Show Fourth Task Activity")
+        }
+
+        Button(
+            onClick = { context.startActivity(Intent(context, DIYActivity::class.java)) },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(text = "Show DIYActivity Activity")
         }
     }
 }
